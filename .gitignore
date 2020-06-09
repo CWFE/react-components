@@ -3,3 +3,4 @@ dist
 example/dist
 yarn-error.log
 src
+.DS_Store
