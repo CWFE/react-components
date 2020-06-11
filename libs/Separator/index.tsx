@@ -1,6 +1,7 @@
 import React from 'react'
 import withBaseProps from '../withBaseProps'
 import { BaseComponentProps } from '..'
+import './index.less'
 
 type Size = 'large' | 'middle' | 'small'
 type Direction = 'horizontal' | 'vertical'
@@ -26,19 +27,17 @@ interface SeparatorProps extends BaseComponentProps {
 const Separator = (props: SeparatorProps) => {
   const direction = props.direction || 'horizontal'
   const size = props.size || 'small'
-  const color = props.color || '#CCCCCC'
   const margin = props.margin || (direction === 'horizontal' ? '10px 0' : '0 10px')
 
   let sizeValue = transformSize(size)
   const width = direction === 'horizontal' ? '100%' : sizeValue
   const height = direction === 'vertical' ? '100%' : sizeValue
   return (
-    <div style={Object.assign({
+    <div className='cwfe-separator' style={Object.assign({
       width: width,
       height: height,
-      backgroundColor: color,
       margin: margin
-    }, props.style)}  />
+    }, props.color || {}, props.style)}  />
   )
 }
 

@@ -9,8 +9,7 @@ type FlexJustify = 'start' | 'end' | 'center' | 'between' | 'around' | 'evenly'
 interface FlexProps extends BaseComponentProps {
   direction?: FlexDirection
   align?: FlexAlign
-  justify?: FlexJustify,
-  className?: string
+  justify?: FlexJustify
 }
 
 function transformAlign (align: FlexAlign) : string | null {

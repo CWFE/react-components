@@ -7,7 +7,16 @@ const cssRule = {
 }
 const lessRule = {
   test: /\.less$/,
-  use: ['less-loader'],
+  use: ['style-loader', 'css-loader', 'postcss-loader', {
+    loader: 'less-loader',
+    query: {
+      lessOptions: {
+        modifyVars: {
+          // "theme-color": "yellow"
+        }
+      }
+    }
+  }],
   exclude: /node_modules/
 }
 const jsRule = {
