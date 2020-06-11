@@ -1,6 +1,6 @@
 {
   "name": "@cwfe/react-components",
-  "version": "1.0.2",
+  "version": "1.0.9",
   "main": "src/index.js",
   "repository": "https://github.com/CWFE/react-components",
   "author": "喵大快救我 <wang0122xl@163.com>",
@@ -8,7 +8,7 @@
   "scripts": {
     "start": "webpack-dev-server --open development --config webpack.dev.js",
     "build": "webpack --mode production --config webpack.pro.js",
-    "prepublishOnly": "rm -rf src && tsc"
+    "prepublishOnly": "rm -rf src && cp -r libs src && tsc && find src/*.ts* src/**/*.ts* ! -name *.d.ts* | xargs rm"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.1",
