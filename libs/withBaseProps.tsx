@@ -7,14 +7,15 @@ type WrappedComponentFunction = (Component: React.ReactNode) => React.ReactNode
 const withBaseProps = <P extends BaseComponentProps>(
   WrappedComponent: React.ComponentType<P>
 ): React.ComponentType<P> => (props) => {
-  console.log(props)
-
-  const { children, width, height, style = {} } = props
+  const { children, width, height, bgColor, style = {} } = props
   if (width) {
     style.width = width
   }
   if (height) {
     style.height = height
+  }
+  if (bgColor) {
+    style.backgroundColor = bgColor
   }
   return (
     <WrappedComponent {...props} style={{ ...style }}>

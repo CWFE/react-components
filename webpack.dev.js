@@ -15,7 +15,7 @@ const devConfig = {
   },
   plugins: [htmlWebpackPlugin],
   devServer: {
-    port: 3001
+    port: 3002
   }
 }
 

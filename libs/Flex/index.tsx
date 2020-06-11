@@ -6,7 +6,7 @@ type FlexAlign = 'start' | 'end' | 'center'
 type FlexDirection = 'row' | 'column' | 'row-reverse' | 'column-reverse'
 type FlexJustify = 'start' | 'end' | 'center' | 'between' | 'around' | 'evenly'
 
-export interface FlexProps extends BaseComponentProps {
+interface FlexProps extends BaseComponentProps {
   direction?: FlexDirection
   align?: FlexAlign
   justify?: FlexJustify,

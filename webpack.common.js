@@ -5,6 +5,11 @@ const cssRule = {
   use: ['style-loader', 'css-loader', 'postcss-loader'],
   exclude: /node_modules/
 }
+const lessRule = {
+  test: /\.less$/,
+  use: ['less-loader'],
+  exclude: /node_modules/
+}
 const jsRule = {
   test: /\.(js | jsx)$/,
   use: 'babel-loader',
@@ -18,7 +23,7 @@ const tsRule = {
 
 module.exports = {
   module: {
-    rules: [jsRule, tsRule, cssRule]
+    rules: [jsRule, tsRule, cssRule, lessRule]
   },
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx']
