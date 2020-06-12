@@ -1,4 +1,6 @@
-export declare interface BaseComponentProps {
+import { HtmlHTMLAttributes, HTMLAttributes } from 'react'
+
+export declare interface BaseComponentProps extends HTMLAttributes<any> {
   className?: string,
   width?: number | string
   height?: number | string

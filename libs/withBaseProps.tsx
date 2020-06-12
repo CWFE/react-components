@@ -1,6 +1,7 @@
-import React, { SFC, Props } from 'react'
+import React, { SFC, Props, useRef, useContext } from 'react'
 import { BaseComponentProps } from '.'
 import './index.less'
+import { CWFEBaseContext } from './context'
 
 type TNode = (Props: any) => React.ReactNode
 type WrappedComponentFunction = (Component: React.ReactNode) => React.ReactNode
@@ -8,6 +9,8 @@ type WrappedComponentFunction = (Component: React.ReactNode) => React.ReactNode
 const withBaseProps = <P extends BaseComponentProps>(
   WrappedComponent: React.ComponentType<P>
 ): React.ComponentType<P> => (props) => {
+  const { state, dispatch } = useContext(CWFEBaseContext)
+
   const {
     children,
     width,
@@ -29,11 +32,8 @@ const withBaseProps = <P extends BaseComponentProps>(
   }
 
   return (
-    <WrappedComponent {...props} className={`${className} ${hoverTitle && 'cwfe-hover-title'}`} style={{ ...style }}>
-      { children }
-      {
-        hoverTitle && <p className='hoverTitle' />
-      }
+    <WrappedComponent {...props} style={{ ...style }}>
+      {children}
     </WrappedComponent>
   )
 }

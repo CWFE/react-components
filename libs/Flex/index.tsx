@@ -35,7 +35,9 @@ const Flex = (props: FlexProps) => {
 
   return (
     <div
-      className={props.className}
+      {
+        ...props
+      }
       style={Object.assign({
         display: 'flex',
         flexDirection: direction,

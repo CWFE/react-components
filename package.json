@@ -1,6 +1,6 @@
 {
   "name": "@cwfe/react-components",
-  "version": "1.0.9",
+  "version": "1.0.13",
   "main": "src/index.js",
   "repository": "https://github.com/CWFE/react-components",
   "author": "喵大快救我 <wang0122xl@163.com>",
@@ -35,5 +35,8 @@
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.11.0",
     "webpack-merge": "^4.2.2"
+  },
+  "dependencies": {
+    "@umijs/hooks": "^1.9.3"
   }
 }
